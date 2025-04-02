@@ -34,4 +34,4 @@ def chat():
         return "Sorry, I encountered an error processing your request." # Inform the user
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0")
