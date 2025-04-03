@@ -1,0 +1,69 @@
+function initializeGooglePay() {
+    if (typeof google === 'undefined' || !google.payments?.api) {
+        console.error("Google Pay API not loaded! Retrying in 500ms...");
+        setTimeout(initializeGooglePay, 500); 
+        return;
+    }
+    console.log("Google Pay API loaded successfully!");
+    const googlePayClient = new google.payments.api.PaymentsClient({
+        environment: 'TEST' 
+    });
+    const paymentRequest = {
+      apiVersion: 2,
+      apiVersionMinor: 0,
+      allowedPaymentMethods: [
+          {
+              type: 'CARD',
+              parameters: {
+                  allowedCardNetworks: ['VISA', 'MASTERCARD', 'AMEX'],
+                  allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+              },
+              tokenizationSpecification: {
+                  type: 'PAYMENT_GATEWAY',
+                  parameters: {
+                      gateway: 'razorpay', 
+                      gatewayMerchantId: 'your_real_gateway_id'
+                  }
+              }
+          }
+      ],
+      merchantInfo: {
+          merchantId: 'your_merchant_id',
+          merchantName: 'Your Business Name'
+      },
+      transactionInfo: {
+          totalPriceStatus: 'FINAL',
+          totalPrice: '10.00',
+          currencyCode: 'USD'
+      }
+  };
+    googlePayClient.isReadyToPay(paymentRequest)
+        .then(response => {
+            if (response.result) {
+                const button = googlePayClient.createButton({
+                    onClick: () => {
+                        googlePayClient.loadPaymentData(paymentRequest)
+                            .then(paymentData => console.log('Payment successful', paymentData))
+                            .catch(error => {
+                                if (error.statusCode === 'CANCELED') {
+                                    console.log('User canceled the payment');
+                                } else {
+                                    console.error('Payment failed', error);
+                                }
+                            });
+                    }
+                });
+                document.getElementById('gpay-button').appendChild(button);
+            } else {
+                console.log('⚠️ Google Pay is not available');
+            }
+        })
+        .catch(error => console.error('Error checking Google Pay availability', error));
+  }
+  setTimeout(() => {
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initializeGooglePay);
+    } else {
+        initializeGooglePay();
+    }
+  }, 1000);

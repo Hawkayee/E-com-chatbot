@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobiSharks</title>
+    <link rel="stylesheet" href="styles.css">
+    <div class="container">
+        <div class="title">PRODUCT LIST</div>
+        <div class="listProduct"></div>
+    </div>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="menu-bar" class="menu-bar">
+        <a href="intro.html">Home</a>
+        <a href="cart.html">Cart </a>
+        <a href="#">Wishlist</a>
+        <a href="help.html">About Us</a>
+    </div>
+</div>
+<table>
+    <tr>
+        <td>
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo" ><img  src="img/img.jpg"></div>
+    <div class="search-box">
+        <input type="search" placeholder=" Search for Products...">
+          </div>
+          <button id="sign-in-button" ><p id="p-sign-in"><a href="https://jp-bro.github.io/login-page/">Sign In</a></p></button>
+         </div>
+       </div>
+     </div>
+        </td>
+    </tr>
+    <section id="hero">
+        <h1>Super value deals</h1>
+        <h2>Happy Shopping!</h2>
+    </section>
+    <h1 class="main-title">OUR SAMPLE PRODUCTS</h1>
+</table>
+    <table>
+        <tr>
+    <section class="product-section">  
+        <td>
+            <div class="product-card" onclick="goToDetails(1)">
+            <img src="img/f13.jpg.webp" alt="Product Image 2">
+            <div class="product-title">SAMSUNG Galaxy F13 (Sunrise Copper, 64 GB)</div>
+            <div class="product-price">₹9999.00</div>
+            <div class="product-mrp">₹15999.00</div>
+            <div class="product-discount">09% off</div>
+            <button  class="cart-button" onclick="sendToCart(event,'show')">Add to Cart</button>
+        </div>
+        </td>          
+        <td>
+            <div class="product-card" onclick="goToDetails(2)">
+            <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/0/h/k/-original-imagcg22czc3ggvw.jpeg?q=70" alt="Product Image 2">
+            <div class="product-title">SAMSUNG Galaxy F23 5G (Aqua Blue, 128 GB)</div>
+            <div class="product-price">₹15999.00</div>
+            <div class="product-mrp">20999.00</div>
+            <div class="product-discount">08% off</div>
+            <button  class="cart-button" onclick="sendToCart(event,'show1')">Add to Cart</button>
+        </div>
+        </td>
+        <td>
+            <div class="product-card" onclick="goToDetails(3)">
+                <img src="img/f04l.webp" alt="Product Image 3">
+                <div class="product-title">SAMSUNG Galaxy F04 (Jade Purple, 64 GB)</div>
+                <div class="product-price">₹9999.00</div>
+                <div class="product-mrp">₹14999.00</div>
+                <div class="product-discount">09% off</div>
+                <button  class="cart-button" onclick="sendToCart(event,'show2')">Add to Cart</button>
+            </div>
+            </td>
+            <td>
+                <div class="product-card" onclick="goToDetails(4)">
+                    <img src="img/f14l.webp" alt="Product Image 3">
+                    <div class="product-title">SAMSUNG Galaxy F14 5G (GOAT Green, 128 GB)</div>
+                    <div class="product-price">₹11999.00</div>
+                    <div class="product-mrp">₹17999.00</div>
+                    <div class="product-discount">07% off</div>
+                    <button  class="cart-button" onclick="sendToCart(event,'show3')">Add to Cart</button>
+                </div>
+          </td>
+        </tr>
+    </section>
+    <section class="product-section">
+        <td>
+            <div class="product-card" onclick="goToDetails(5)" >
+            <img src="img/m33.jpg" alt="Product Image 1">
+            <div class="product-title">SAMSUNG Galaxy M33 5G (Mystique Green, 128 GB)</div>
+            <div class="product-price">₹21999.00</div>
+            <div class="product-mrp">₹24999.00</div>
+            <div class="product-discount">06% off</div>
+            <button  class="cart-button" onclick="sendToCart(event,'show4')">Add to Cart</button>
+        </div>
+        </td>
+        <td>
+            <div class="product-card" onclick="goToDetails(6)">
+            <img src="img/m04.webp" alt="Product Image 2">
+            <div class="product-title">SAMSUNG Galaxy M04 (Light Green, 128 GB)</div>
+            <div class="product-price">₹23999.00</div>
+            <div class="product-mrp">₹29999.00</div>
+            <div class="product-discount">07% off</div>
+            <button  class="cart-button" onclick="sendToCart(event,'show5')">Add to Cart</button>
+        </div>
+        </td>
+        <td>
+            <div class="product-card" onclick="goToDetails(7)">
+                <img src="img/m13.jpeg" alt="Product Image 3">
+                <div class="product-title">SAMSUNG GALAXY M13 (Midnight Blue, 64 GB)</div>
+                <div class="product-price">₹27999.00</div>
+                <div class="product-mrp">₹31999.00</div>
+                <div class="product-discount">09% off</div>
+                <button  class="cart-button" onclick="sendToCart(event,'show6')">Add to Cart</button>
+            </div>
+            </td>
+            <td>
+                <div class="product-card" onclick="goToDetails(8)">
+                    <img src="img/s20.jpeg" alt="Product Image 3">
+                    <div class="product-title">SAMSUNG Galaxy S20 FE 5G (Cloud Mint, 128 GB)</div>
+                    <div class="product-price">₹46999.00</div>
+                    <div class="product-mrp">₹55999.00</div>
+                    <div class="product-discount">10% off</div>
+                    <button  class="cart-button" onclick="sendToCart(event,'show7')">Add to Cart</button>
+                </div>
+          </td>
+        </tr>
+    </section>
+    <section class="product-section">  
+        <td>
+            <div class="product-card" onclick="goToDetails(9)">
+            <img src="img/a23.jpeg" alt="Product Image 2">
+            <div class="product-title">SAMSUNG Galaxy A23 (Black, 128 GB)</div>
+            <div class="product-price">₹59999.00</div>
+            <div class="product-mrp">₹65999.00</div>
+            <div class="product-discount">09% off</div>
+            <button class="cart-button" onclick="sendToCart(event,'show8')">Add to Cart</button>
+        </div>
+        </td>          
+        <td>
+            <div class="product-card" onclick="goToDetails(10)">
+            <img src="img/s21.jpeg" alt="Product Image 2">
+            <div class="product-title">SAMSUNG Galaxy S21 FE 5G (Graphite, 128 GB)</div>
+            <div class="product-price">₹25999.00</div>
+            <div class="product-mrp">₹30999.00</div>
+            <div class="product-discount">08% off</div>
+            <button  class="cart-button" onclick="sendToCart(event,'show9')">Add to Cart</button>
+        </div>
+        </td>
+        <td>
+            <div class="product-card" onclick="goToDetails(11)">
+                <img src="img/a345g.webp" alt="Product Image 3">
+                <div class="product-title">SAMSUNG Galaxy A34 5G (Awesome Violet, 128 GB)</div>
+                <div class="product-price">₹9999.00</div>
+                <div class="product-mrp">₹15999.00</div>
+                <div class="product-discount">09% off</div>
+                <button  class="cart-button" onclick="sendToCart(event,'show10')">Add to Cart</button>
+            </div>
+            </td>
+            <td>
+                <div class="product-card" onclick="goToDetails(12)">
+                    <img src="img/a044s.webp" alt="Product Image 3">
+                    <div class="product-title">SAMSUNG Galaxy A04s (Copper, 64 GB)</div>
+                    <div class="product-price">₹11999.00</div>
+                    <div class="product-mrp">₹17999.00</div>
+                    <div class="product-discount">07% off</div>
+                    <button  class="cart-button" onclick="sendToCart(event,'show11')">Add to Cart</button>
+                </div>                
+          </td>
+        </tr>
+    </section>
+    <div class="bottom-text" id="banner">
+        <h3>Repair Services</h3>
+        <h1>Up to 70% off - on mobiles</h1>
+        <a href="more.html"><button class="button-normal">More Mobiles</button></a>
+    </div>
+    <a href="http://127.0.0.1:5000"><button class="floating-button">Help</button></a>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://pay.google.com/gp/p/js/pay.js" async defer></script>
+    <script src="script.js" defer></script>
+</head>
+    <body>
+        <section id="cart">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="show" style="display:none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/f13.jpg.webp" alt=""></td>
+                        <td>SAMSUNG Galaxy F13 (Sunrise Copper, 64 GB)</td>
+                        <td>₹9,999.00</td>
+                        <td><input id="boxx" oninput="update()" type="number"></td>
+                        <td><h2 id="result"></h2></td>
+                    </tr>
+                    <tr id="show1" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/0/h/k/-original-imagcg22czc3ggvw.jpeg?q=70" alt=""></td>
+                        <td>SAMSUNG Galaxy F23 5G (Aqua Blue, 128 GB)</td>
+                        <td>₹14,999.00</td>
+                        <td><input id="boxx1" oninput="update1()" type="number"></td>
+                        <td><h2 id="result1"></h2></td>
+                    </tr>
+                    <tr id="show2" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/f04.jpeg" alt=""></td>
+                        <td>SAMSUNG Galaxy F04 (Jade Purple, 64 GB)</td>
+                        <td>₹9,999.00</td>
+                        <td><input id="boxx2" oninput="update2()" type="number"></td>
+                        <td><h2 id="result2"></h2></td>
+                    </tr>
+                
+                    <tr id="show3" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/f13.jpg.webp" alt=""></td>
+                        <td>SAMSUNG Galaxy F14 5G (GOAT Green, 128 GB)</td>
+                        <td>₹11,999.00</td>
+                        <td><input id="boxx3" oninput="update3()" type="number"></td>
+                        <td><h2 id="result3"></h2></td>
+                    </tr>
+                
+                    <tr id="show4" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/m33.jpg" alt=""></td>
+                        <td>SAMSUNG Galaxy M33 5G (Mystique Green, 128 GB)</td>
+                        <td>₹21,999.00</td>
+                        <td><input id="boxx4" oninput="update4()" type="number"></td>
+                        <td><h2 id="result4"></h2></td>
+                    </tr>
+                
+                    <tr id="show5" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/m04.webp" alt=""></td>
+                        <td>SAMSUNG Galaxy M04 (Light Green, 128 GB)</td>
+                        <td>₹23,999.00</td>
+                        <td><input id="boxx5" oninput="update5()" type="number"></td>
+                        <td><h2 id="result5"></h2></td>
+                    </tr>
+                
+                    <tr id="show6" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/m13.jpeg" alt=""></td>
+                        <td>SAMSUNG Galaxy M13 (Midnight Blue, 64 GB)</td>
+                        <td>₹27,999.00</td>
+                        <td><input id="boxx6" oninput="update6()" type="number"></td>
+                        <td><h2 id="result6"></h2></td>
+                    </tr>
+                
+                    <tr id="show7" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/s20.jpeg" alt=""></td>
+                        <td>SAMSUNG Galaxy S20 FE 5G (Cloud Mint, 128 GB)</td>
+                        <td>₹47,999.00</td>
+                        <td><input id="boxx7" oninput="update7()" type="number"></td>
+                        <td><h2 id="result7"></h2></td>
+                    </tr>
+                
+                    <tr id="show8" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/a23.jpeg" alt=""></td>
+                        <td>SAMSUNG Galaxy A23 (Black, 128 GB)</td>
+                        <td>₹59,999.00</td>
+                        <td><input id="boxx8" oninput="update8()" type="number"></td>
+                        <td><h2 id="result8"></h2></td>
+                    </tr>
+                
+                    <tr id="show9" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/s21.jpeg" alt=""></td>
+                        <td>SAMSUNG Galaxy S21 FE 5G (Graphite, 128 GB)</td>
+                        <td>₹25,999.00</td>
+                        <td><input id="boxx9" oninput="update9()" type="number"></td>
+                        <td><h2 id="result9"></h2></td>
+                    </tr>
+                
+                    <tr id="show10" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/a345g.webp" alt=""></td>
+                        <td>SAMSUNG Galaxy A34 5G (Awesome Violet, 128 GB)</td>
+                        <td>₹9,999.00</td>
+                        <td><input id="boxx10" oninput="update10()" type="number"></td>
+                        <td><h2 id="result10"></h2></td>
+                    </tr>
+                
+                    <tr id="show11" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/a044s.webp" alt=""></td>
+                        <td>SAMSUNG Galaxy A04s (Copper, 64 GB)</td>
+                        <td>₹11,999.00</td>
+                        <td><input id="boxx11" oninput="update11()" type="number"></td>
+                        <td><h2 id="result11"></h2></td>
+                    </tr>
+                    <tr id="show12" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/s25.webp" alt=""></td>
+                        <td>SAMSUNG Galaxy S25 (Copper, 64 GB)</td>
+                        <td>₹46,999.00</td>
+                        <td><input id="boxx12" oninput="update12()" type="number"></td>
+                        <td><h2 id="result12"></h2></td>
+                    </tr>
+                    <tr id="show13" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/pococ75.webp" alt=""></td>
+                        <td>POCO C75 5G (Copper, 64 GB)</td>
+                        <td>₹46,999.00</td>
+                        <td><input id="boxx13" oninput="update13()" type="number"></td>
+                        <td><h2 id="result13"></h2></td>
+                    </tr>
+                    <tr id="show14" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/v30.jpg" alt=""></td>
+                        <td>VIVO V30 (Velvet Red)</td>
+                        <td>₹45,999.00</td>
+                        <td><input id="boxx14" oninput="update14()" type="number"></td>
+                        <td><h2 id="result14"></h2></td>
+                    </tr>
+                    <tr id="show15" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/motog35.webp" alt=""></td>
+                        <td>MOTO G35 5G</td>
+                        <td>₹35,999.00</td>
+                        <td><input id="boxx15" oninput="update15()" type="number"></td>
+                        <td><h2 id="result15"></h2></td>
+                    </tr>
+                    <tr id="show16" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/moto5g.webp" alt=""></td>
+                        <td>MOTO M45 5G</td>
+                        <td>₹45,999.00</td>
+                        <td><input id="boxx16" oninput="update16()" type="number"></td>
+                        <td><h2 id="result16"></h2></td>
+                    </tr>
+                    <tr id="show17" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/fo6.webp" alt=""></td>
+                        <td>SAMSUNG Galaxy F06 (Metal, 64 GB)</td>
+                        <td>₹35,999.00</td>
+                        <td><input id="boxx17" oninput="update17()" type="number"></td>
+                        <td><h2 id="result17"></h2></td>
+                    </tr>
+                    <tr id="show18" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/a14.webp" alt=""></td>
+                        <td>SAMSUNG Galaxy A14 (Silver, 64 GB)</td>
+                        <td>₹45,999.00</td>
+                        <td><input id="boxx18" oninput="update18()" type="number"></td>
+                        <td><h2 id="result18"></h2></td>
+                    </tr>
+                    <tr id="show19" style="display: none;">
+                        <td><button onclick="deleteRow(this)" class="delete-btn">Delete</button></td>
+                        <td><img src="img/realme5g.webp" alt=""></td>
+                        <td>REALME R31 5G (Silver, 128 GB)</td>
+                        <td>₹46,999.00</td>
+                        <td><input id="boxx19" oninput="update19()" type="number"></td>
+                        <td><h2 id="result19"></h2></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="cart-add">
+            <div id="coupon">
+                <h3>Apply Coupon</h3>
+                <div>
+                    <input type="text" placeholder="Enter your Coupon">
+                    <div class="button-container">
+                        <button class="apply-button" onclick="showAlert()">Apply</button>
+                    </div>
+                </div>
+            </div>
+            <div id="subtotal">
+                <h3>Cart Subtotal</h3>
+                <table>
+                    <tr>
+                        <td>Cart Subtotal</td>
+                        <td><h2 id="good">0</h2></td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td> 
+                        <td><strong><h2 id="total-good">0</h2></strong></td>
+                    </tr>
+                </table>
+                <div class="button-container">
+                    <button class="apply-button" onclick="news()" >Proceed to Checkout</button>
+                </div>
+            </div>
+            </div>
+        </section>
+        <div id="gpay-button"></div>
+    </body>
+</html>

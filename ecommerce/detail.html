@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #fffafa;
+            color: rgb(78, 78, 78);
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 350px;
+            max-width: 400px;
+            border-radius: 10px;
+            height: 400px;
+        }
+        .price {
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .mrp {
+            text-decoration: line-through;
+            color: grey;
+            font-weight: normal;
+        }
+        .discount {
+            color: red;
+            font-weight: bold;
+        }
+        .exchange {
+            background: #0f9d58;
+            padding: 10px;
+            color: white;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .description {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+            background: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get("id");
+            const products = {
+                "1": {
+                    image :"img/f13.jpg.webp",
+                    title: "SAMSUNG Galaxy F13 (Sunrise Copper, 64 GB",
+                    price: "₹9999",
+                    mrp: "₹15999",
+                    discount: "Save ₹6,000, 9.02% off)",
+                    exchange: "Exchange up to ₹8,459 off",
+                     description: "A budget-friendly smartphone with a large battery and FHD+ display, perfect for daily use and entertainment."
+                
+                },
+                "2": {
+                    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/0/h/k/-original-imagcg22czc3ggvw.jpeg?q=70",
+                    title: "SAMSUNG Galaxy F23 5G (Aqua Blue, 128 GB)",
+                    price: "₹15999",
+                    mrp: "₹20999",
+                    discount: "(Save ₹5,000, 7.14% off)",
+                    exchange: "Exchange up to ₹1400 off",
+                    description: "Delivers fast 5G connectivity and a powerful Snapdragon processor for smooth performance."
+                },
+                "3": {
+                    image :"img/f04l.webp",
+                    title: "SAMSUNG Galaxy F04 (Jade Purple, 64 GB)",
+                    price: "₹9999",
+                    mrp: "₹14999",
+                    discount: "(Save ₹5,000, 6.26% off)",
+                    exchange: "Exchange up to ₹5000 off",
+                    description: " An affordable device with a stylish design and long battery life for everyday tasks"
+                },
+                "4": {
+                    image: "img/f14l.webp",
+                    title: "SAMSUNG Galaxy F14 5G (GOAT Green, 128 GB)",
+                    price: "₹11999",
+                    mrp: "₹17999",
+                    discount: "(Save ₹6,000, 7.14% off)",
+                    exchange: "Exchange up to ₹6000 off",
+                    description: " Features a robust battery and an Exynos processor, ensuring smooth multitasking and gaming."
+                },
+                "5": {
+                    image :"img/m33.jpg",
+                    title: "SAMSUNG Galaxy M33 (Light Green, 128)",
+                    price: "₹21999",
+                    mrp: "₹24999",
+                    discount: "(Save ₹5,000, 6.26% off)",
+                    exchange: "Exchange up to ₹4000 off",
+                    description: "  A powerful mid-range phone with a 120Hz display and a high-capacity battery for all-day usage."
+                },
+                "6": {
+                    image: "img/m04.webp",
+                    title: "SAMSUNG Galaxy M04 (Light Green, 128 GB)",
+                    price: "₹23999",
+                    mrp: "₹29999",
+                    discount: "(Save ₹5,000, 7.14% off)",
+                    exchange: "Exchange up to ₹4000 off",
+                    description: "A budget smartphone with a sleek design and reliable performance for basic smartphone users."
+                },
+                "7": {
+                    image :"img/m13.jpeg",
+                    title: "SAMSUNG GALAXY M13 (Midnight Blue, 64 GB)",
+                    price: "27999",
+                    mrp: "₹31999",
+                    discount: "(Save ₹5,000, 6.26% off)",
+                    exchange: "Exchange up to ₹2900 off",
+                    description: "  A versatile phone with a smooth display and a long-lasting battery, ideal for entertainment and productivity."
+                },
+                "8": {
+                    image: "img/s20.jpeg",
+                    title: "SAMSUNG Galaxy S20 FE 5G (Cloud Mint, 128 GB)",
+                    price: "₹46999",
+                    mrp: "₹55999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,00 off",
+                    description: " A premium device with flagship features, including a high-refresh-rate display and a pro-grade camera."
+                },
+                "9": {
+                    image: "img/a23.jpeg",
+                    title: "SAMSUNG Galaxy A23 (Black, 128 GB)",
+                    price: "₹59999",
+                    mrp: "₹65999",
+                    discount: "(Save ₹5,000, 7.14% off)",
+                    exchange: "Exchange up to ₹4000 off",
+                    description: "Comes with a Snapdragon 680 processor, a 6.6-inch PLS LCD, and a 50MP quad-camera setup, ensuring great photography."
+                },
+                "10": {
+                    image :"img/s21.jpeg",
+                    title: "SAMSUNG GALAXY S21 (Midnight Blue, 64 GB)",
+                    price: "27999",
+                    mrp: "₹31999",
+                    discount: "(Save ₹5,000, 5.26% off)",
+                    exchange: "Exchange up to ₹2900 off",
+                    description: " A fan-favorite premium phone with an Exynos 2100 processor, a 120Hz AMOLED display, and wireless charging capabilities."
+                },
+                "11": {
+                    image: "img/a345g.webpg",
+                    title: "Samsung Galaxy A34 Ultra",
+                    price: "₹46999",
+                    mrp: "₹55999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off",
+                    description: "Equipped with a Dimensity 1080 processor, a Super AMOLED display, and a 5000mAh battery, offering excellent performance for its price."
+                },
+                "12": {
+                    image: "img/a044s.webp",
+                    title: "Samsung Galaxy S24 Ultra",
+                    price: "₹46999",
+                    mrp: "₹55999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off",
+                    description: " A budget smartphone with a 6.5-inch PLS LCD, a 50MP main camera, and a 5000mAh battery for long-lasting usage."
+                },
+                "13": {
+                    image: "img/s25.webp",
+                    title: "Samsung Galaxy S25 Ultra",
+                    price: "₹46999",
+                    mrp: "₹55999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off",
+                    description: "A premium smartphone featuring a sleek design, a high-refresh-rate AMOLED display, and a powerful processor for smooth performance. Equipped with a pro-grade camera system for stunning photos and videos."
+                },
+                "14": {
+                    image: "img/pococ75.webp",
+                    title: "POCO C75 5G Ultra",
+                    price: "₹36999",
+                    mrp: "₹55999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off",
+                    description: "A budget-friendly 5G smartphone with a large battery, smooth display, and efficient processor for everyday tasks. Ideal for users who want speed and connectivity at an affordable price."
+                },
+                "15": {
+                    image: "img/v30.jpg",
+                    title: "VIVO V30 5G Ultra",
+                    price: "₹16999",
+                    mrp: "₹25999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off",
+                    description: "A stylish phone with a stunning AMOLED display, excellent camera capabilities, and fast charging support. Perfect for photography enthusiasts who love vibrant and detailed images"
+                },
+                "16": {
+                    image: "img/motog35.webp",
+                    title: "Moto G35 5G Ultra",
+                    price: "₹26999",
+                    mrp: "₹35999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off",
+                    description: "A solid mid-range phone offering 5G connectivity, a high-refresh-rate screen, and a long-lasting battery. Designed for users who prioritize smooth performance and durability."
+                },
+                "17": {
+                    image: "img/moto5g.webp",
+                    title: "Moto M45 5G Ultra",
+                    price: "₹36999",
+                    mrp: "₹45999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off",
+                    description: "A high-performance smartphone with an impressive battery life, fast charging, and a powerful chipset to handle multitasking with ease. A great choice for professionals and gamers."
+                },
+                "18": {
+                    image: "img/fo6.webp",
+                    title: "Samsung Galaxy F06 Ultra",
+                    price: "₹25999",
+                    mrp: "₹35999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off",
+                    description: "A budget-friendly smartphone with a large display, decent camera setup, and long battery life. Ideal for students and casual users looking for reliability."
+                },
+                "19": {
+                    image: "img/a14.webp",
+                    title: "Samsung Galaxy A14 5G Ultra",
+                    price: "₹26999",
+                    mrp: "₹35999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off",
+                    description: "A 5G-enabled device with a large screen, multiple camera lenses for versatile photography, and a sturdy build. Great for users who want future-ready connectivity at a reasonable price."
+                },
+                "20": {
+                    image: "img/realme5g.webp",
+                    title: "Realme R31 5G Ultra",
+                    price: "₹26999",
+                    mrp: "₹35999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off",
+                    description: "A feature-rich smartphone offering a high-resolution display, ultra-fast charging, and a smooth user experience. Best suited for multimedia lovers and gaming enthusiasts."
+                }
+            };
+            if (products[productId]) {
+                document.getElementById("product-image").src = products[productId].image;
+                document.getElementById("product-title").innerText = products[productId].title;
+                document.getElementById("product-price").innerHTML = `${products[productId].price} <span class="mrp">${products[productId].mrp}</span> <span class="discount">${products[productId].discount}</span>`;
+                document.getElementById("exchange-offer").innerText = products[productId].exchange;
+                document.getElementById("product-description").innerText = products[productId].description;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="container" class="container">
+        <img id="product-image" src="" alt="Product Image">
+        <h2 id="product-title"></h2>
+        <p id="product-price" class="price"></p>
+        <div class="exchange" id="exchange-offer"></div>
+        <p id="product-description" class="description"></p>
+        <br><br>
+    </div>
+</body>
+</html>

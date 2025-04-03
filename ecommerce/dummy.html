@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffafa;
+            color: rgb(78, 78, 78);
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        img {
+            width: 350px;
+            max-width: 400px;
+            border-radius: 10px;
+            height: 400px;
+        }
+        .price {
+            font-size: 24px;
+            color: #4CAF50;
+        }
+        .mrp {
+            text-decoration: line-through;
+            color: grey;
+        }
+        .discount {
+            color: red;
+        }
+        .exchange {
+            background: #0f9d58;
+            padding: 10px;
+            color: white;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get("id");
+            const products = {
+                "1": {
+                    image :"C:\\Users\\Admin\\Desktop\\ecommerce\\img\\f13.jpg.webp",
+                    title: "SAMSUNG Galaxy F13 (Sunrise Copper, 64 GB",
+                    price: "₹15999",
+                    mrp: "₹9999",
+                    discount: "Save ₹6,000, 9.02% off)",
+                    exchange: "Exchange up to ₹8,459 off",
+                
+                },
+                "2": {
+                    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/0/h/k/-original-imagcg22czc3ggvw.jpeg?q=70",
+                    title: "SAMSUNG Galaxy F23 5G (Aqua Blue, 128 GB)",
+                    price: "₹20999",
+                    mrp: "₹15999",
+                    discount: "(Save ₹5,000, 7.14% off)",
+                    exchange: "Exchange up to ₹1400 off"
+                },
+                "3": {
+                    image :"C:\\Users\\Admin\\Desktop\\ecommerce\\img\\f04l.webp",
+                    title: "SAMSUNG Galaxy F04 (Jade Purple, 64 GB)",
+                    price: "₹14999",
+                    mrp: "₹9999",
+                    discount: "(Save ₹5,000, 6.26% off)",
+                    exchange: "Exchange up to ₹5000 off",
+                },
+                "4": {
+                    image: "C:\\Users\\Admin\\Desktop\\ecommerce\\img\\f14l.webp",
+                    title: "SAMSUNG Galaxy F14 5G (GOAT Green, 128 GB)",
+                    price: "₹17999",
+                    mrp: "₹11999",
+                    discount: "(Save ₹6,000, 7.14% off)",
+                    exchange: "Exchange up to ₹6000 off"
+                },
+                "5": {
+                    image :"C:\\Users\\Admin\\Desktop\\ecommerce\\img\\m33.jpg",
+                    title: "SAMSUNG Galaxy M33 (Light Green, 128)",
+                    price: "₹24999",
+                    mrp: "₹21999",
+                    discount: "(Save ₹5,000, 6.26% off)",
+                    exchange: "Exchange up to ₹4000 off",
+                },
+                "6": {
+                    image: "C:\\Users\\Admin\\Desktop\\ecommerce\\img\\m04.webp",
+                    title: "SAMSUNG Galaxy M04 (Light Green, 128 GB)",
+                    price: "₹29999",
+                    mrp: "₹23999",
+                    discount: "(Save ₹5,000, 7.14% off)",
+                    exchange: "Exchange up to ₹4000 off"
+                },
+                "7": {
+                    image :"C:\\Users\\Admin\\Desktop\\ecommerce\\img\\m13.jpeg",
+                    title: "SAMSUNG GALAXY M13 (Midnight Blue, 64 GB)",
+                    price: "31999",
+                    mrp: "₹27999",
+                    discount: "(Save ₹5,000, 6.26% off)",
+                    exchange: "Exchange up to ₹2900 off",
+                },
+                "8": {
+                    image: "C:\\Users\\Admin\\Desktop\\ecommerce\\img\\s20.jpeg",
+                    title: "SAMSUNG Galaxy S20 FE 5G (Cloud Mint, 128 GB)",
+                    price: "₹55999",
+                    mrp: "₹46999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,00 off"
+                },
+                "9": {
+                    image: "C:\\Users\\Admin\\Desktop\\ecommerce\\img\\a23.jpeg",
+                    title: "SAMSUNG Galaxy A23 (Black, 128 GB)",
+                    price: "₹29999",
+                    mrp: "₹23999",
+                    discount: "(Save ₹5,000, 7.14% off)",
+                    exchange: "Exchange up to ₹4000 off"
+                },
+                "10": {
+                    image :"C:\\Users\\Admin\\Desktop\\ecommerce\\img\\s21.jpeg",
+                    title: "SAMSUNG GALAXY S21 (Midnight Blue, 64 GB)",
+                    price: "31999",
+                    mrp: "₹27999",
+                    discount: "(Save ₹5,000, 5.26% off)",
+                    exchange: "Exchange up to ₹2900 off",
+                },
+                "11": {
+                    image: "C:\\Users\\Admin\\Desktop\\ecommerce\\img\\a34.jpeg",
+                    title: "Samsung Galaxy A34 Ultra",
+                    price: "₹55999",
+                    mrp: "₹46999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off"
+                },
+                "12": {
+                    image: "C:\\Users\\Admin\\Desktop\\ecommerce\\img\\a04s.jpeg",
+                    title: "Samsung Galaxy S24 Ultra",
+                    price: "₹55999",
+                    mrp: "₹46999",
+                    discount: "(Save ₹9,000, 12% off)",
+                    exchange: "Exchange up to ₹7,000 off"
+                }
+            };
+            if (products[productId]) {
+                document.getElementById("product-image").src = products[productId].image;
+                document.getElementById("product-title").innerText = products[productId].title;
+                document.getElementById("product-price").innerHTML = `${products[productId].price} <span class="mrp">${products[productId].mrp}</span> <span class="discount">${products[productId].discount}</span>`;
+                document.getElementById("exchange-offer").innerText = products[productId].exchange;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="container" class="container">
+        <img id="product-image" src="" alt="Product Image">
+        <h2 id="product-title"></h2>
+        <p id="product-price" class="price"></p>
+        <div class="exchange" id="exchange-offer"></div>
+        <br><br>
+        <a href="intro.html" style="color: rgb(73, 99, 99);">Back to Products</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<style>
+    body{
+        background-color: rgb(248, 210, 216);
+    }
+    input[type="email"],input[type="text"],input[type="password"],input[type="tel"],input[type="datetime-local"]{
+        width:650px;
+        height:30px;
+        margin: 6px;
+    }
+    .button{
+        background-color: rgb(231, 231, 231);
+        border-radius: 100px;
+        height:30px;
+        border: 2;  
+        margin:10px;
+    }
+    select{
+        width:650px;
+        height:35px;
+        margin: 6px;
+    }
+    div{
+        height: 70px;
+        width: 98%;
+        background-color: white;
+    }
+    .tick{
+        color: red;
+        margin-top: 0px; 
+        margin-left:80px;
+    }
+    .co{
+        background-color: rgb(243, 242, 242);
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT</title>
+</head>
+<body >
+    <table>
+        <tr>
+            <td>
+                <h4>Enter details to start your savings journey now!</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="tel" placeholder="+91  Enter Your Number" required>
+            </td>
+            <td>
+                <input type="datetime-local" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="email" placeholder="Email">
+            </td>
+            <td>
+                <input type="text" placeholder="Permanent Account Number" min="0" maxlength="12" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="password" placeholder="12-digit Aadhar number" min="0" maxlength="12" required ><br>
+            </td>
+            <td>
+                <button class="button">Get OTP to Verify Aadhar</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h5 style="margin: 6px; " ><span style="color: red;">Click here.</span>if you dont have Aadhar</h5>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-size: 20px;">Please enter your <b>Professional & Personel Details</b></p>
+            </td>
+        </tr>
+        <tr >
+            <td>
+                <select class="co">
+                <option value="" disabled selected hidden>Occupation</option>
+                <option value="1">Doctor</option>
+                <option value="2">Engineer</option>
+                <option value="3">Lawyer</option>
+                </select>
+            </td>
+            <td>
+                <select class="co">
+                    <option value="" disabled selected hidden>Source of Income</option>
+                    <option>Bussiness</option>
+                    <option>Government job</option>
+                    <option>Private job</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="co" type="text" placeholder="gross annual Income in rupees">
+            </td>
+            <td>
+                <input type="text" class="co" placeholder="Mother's full name">
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <p style="font-size: 20px; " > Select your <b>Product</b></h5>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <p style="color: red ;margin-left: 500px; margin-top: 1px;">Each product gives you</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p >&check;</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
