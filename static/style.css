@@ -221,3 +221,108 @@ border-radius: 0 0 15px 15px !important;
 	margin-bottom: 15px !important;
 }
 }
+
+
+/* General Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Chat Container */
+.chat {
+    margin-top: 50px;
+}
+
+/* Card Styles */
+.card {
+    height: 500px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat Header */
+.card-header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 15px;
+    border-radius: 15px 15px 0 0;
+}
+
+.user_info span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.user_info p {
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Chat Body */
+.msg_card_body {
+    overflow-y: auto;
+    padding: 15px;
+    height: 350px;
+}
+
+/* User Image */
+.img_cont {
+    position: relative;
+}
+
+.user_img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+/* Online Indicator */
+.online_icon {
+    width: 12px;
+    height: 12px;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 2px solid white;
+}
+
+/* Chat Footer */
+.card-footer {
+    padding: 10px;
+    background-color: white;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Input Field */
+.type_msg {
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    outline: none;
+    background-color: #f1f1f1;
+}
+
+/* Send Button */
+.send_btn {
+    background-color: #007bff;
+    border-radius: 50%;
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send_btn:hover {
+    background-color: #0056b3;
+}
+
+
+
